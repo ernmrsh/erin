@@ -1,0 +1,87 @@
+/* basic reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    --color-light: #E6E8E6;
+    --color-dark: #403D39;
+    --color-accent1: #55917F;
+    --color-accent2: #CE4760;
+    
+} 
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: var(--color-light);
+    color: var(--color-dark)
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Orbitron', monospace;
+    padding: 10px 0;
+}
+
+.sidebar {
+    position: absolute;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+    transition: 0.5s;
+    border-right: 1px solid var(--color-dark);
+}
+
+.main {
+    margin-left: 300px;
+    padding: 25px;
+    transition: 0.5s;
+}
+
+.sidebar--header {
+    font-size: 20px;
+    text-align: left; 
+    padding: 20px;
+    margin-right: 50px;
+}
+
+.sidebar ul a {
+    display: block;
+    color: var(--color-dark);
+    font-size: 20px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.sidebar li:hover a {
+    padding-left: 50px;
+}
+
+#toggle-sidebar {
+    display: none;
+}
+
+#toggle-sidebar, label {
+    border:none;
+    font-family: 'Space Mono', monospace;
+    font-size: 35px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+
+#toggle-label {
+    display: block;
+}
+
+input:checked ~ .sidebar {
+    left: -250px;
+}
+
+input:checked ~ .main {
+    margin-left: 50px;
+}
